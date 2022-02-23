@@ -1,8 +1,9 @@
 FROM gradle:7.3.3-alpine AS BUILD
-COPY . .
+WORKDIR /app
+COPY ./ ./
 RUN gradle quarkusBuild
 #RUN ./gradlew build -Dquarkus.package.type=uber-jar
 
 FROM java:11-alpine
-COPY --from=BUILD . .
-CMD["java", "-jar", "build/quarkus-app/quarkus-run.jar"]
+COPY --from=BUILD /home/gradle/build ./build
+CMD ["/bin/sh", "-c", "-java -jar ./build/quarkus-app/quarkus*.jar"]
