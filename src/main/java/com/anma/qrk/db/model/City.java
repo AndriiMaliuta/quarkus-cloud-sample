@@ -1,15 +1,16 @@
 package com.anma.qrk.db.model;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+
 import javax.persistence.Column;
-import javax.persistence.Id;
+import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
 
+@Entity
 @Table(name = "cities")
-public class City {
+public class City extends PanacheEntity {
 
-    @Id
-//    @GeneratedValue(strategy = GenerationType.TABLE)
     @Column(name = "city_id")
     private long id;
     private String name;
