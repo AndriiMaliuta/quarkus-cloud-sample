@@ -1,6 +1,6 @@
 package com.anma.qrk;
 
-import com.anma.qrk.model.Cat;
+import com.anma.qrk.db.model.Cat;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -17,7 +17,7 @@ public class CatResource {
     EntityManager entityManager;
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public List<Cat> cats() {
         return entityManager.createNamedQuery("Cat.findAll", Cat.class).getResultList();
     }

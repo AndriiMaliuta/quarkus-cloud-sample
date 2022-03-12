@@ -1,38 +1,40 @@
-package com.anma.qrk.model;
+package com.anma.qrk.ui.model;
 
-import javax.persistence.*;
+import javax.json.bind.annotation.JsonbProperty;
+import java.time.LocalDateTime;
 
-@Entity
-@NamedQuery(name = "Cat.findAll", query = "SELECT c from Cat c")
-public class Cat {
+public class CatWeb {
 
-    @Id
-    @SequenceGenerator(name = "accountsSequence", sequenceName = "accounts_id_seq",
-            allocationSize = 1, initialValue = 10)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-            generator = "accountsSequence")
-    @Column(name = "cat_id")
-    private Long id;
+    private long catId;
+    private String id;
     private String name;
     private String color;
     private String breed;
     private String registry;
     private String origin;
-    @Column(name = "country_codes") private String countryCodes;
-    @Column(name = "wikipedia_url") private String wikipediaUrl;
+    @JsonbProperty(value = "country_codes")
+    private String countryCodes;
+    @JsonbProperty(value = "wikipedia_url") private String wikipediaUrl;
     private int age;
     private int indoor;
     private int adaptability;
-    @Column(name = "dog_friendly") private int dogFriendly;
+    @JsonbProperty(value = "dog_friendly") private int dogFriendly;
     private int intelligence;
     private int hairless;
-    @Column(name = "person_id") private long personId;
 
-    public Long getId() {
+    public long getCatId() {
+        return catId;
+    }
+
+    public void setCatId(long catId) {
+        this.catId = catId;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -138,13 +140,5 @@ public class Cat {
 
     public void setHairless(int hairless) {
         this.hairless = hairless;
-    }
-
-    public long getPersonId() {
-        return personId;
-    }
-
-    public void setPersonId(long personId) {
-        this.personId = personId;
     }
 }
