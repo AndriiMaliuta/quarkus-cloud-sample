@@ -1,4 +1,4 @@
-package com.anma.java;
+package com.anma.qrk;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
