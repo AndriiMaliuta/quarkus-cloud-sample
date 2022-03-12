@@ -1,5 +1,18 @@
 # quarkus-cloud-sample Project
 
+The Quarkus based project for deploying to Cloud as sample app.
+
+Stack:
+
+- Quarkus
+- PostgreSQL (env params)
+- JDBC/JPA/Data Repository
+- JaxRS
+
+![image](https://user-images.githubusercontent.com/36703491/158017327-1fdb563a-f31c-4d7a-8582-527c6e2e0a96.png)
+
+
+
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
