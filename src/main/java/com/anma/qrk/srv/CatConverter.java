@@ -6,6 +6,6 @@ import com.anma.qrk.ui.model.CatWeb;
 public class CatConverter {
 
     CatWeb convert (Cat cat) {
-
+        return null;
     }
 }
