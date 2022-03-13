@@ -11,6 +11,9 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Path("/cats")
+//@Bulkhead(1)
+//@Fallback(fallbackMethod = "bulkheadFallbackGetBalance",
+//        applyOn = { BulkheadException.class })
 public class CatResource {
 
     @Inject

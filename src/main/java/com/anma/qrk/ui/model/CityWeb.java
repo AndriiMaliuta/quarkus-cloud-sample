@@ -1,6 +1,5 @@
 package com.anma.qrk.ui.model;
 
-
 public class CityWeb {
 
     private long id;
