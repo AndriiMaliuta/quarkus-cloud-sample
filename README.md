@@ -9,7 +9,14 @@ Stack:
 - JDBC/JPA/Data Repository
 - JaxRS
 
+env:
+- DB_USERNAME
+- DB_PASS
+- DB_URL 
+
+RUN: ``` mvn quarkus:dev -DDB_USERNAME=name -DDB_PASS=password -DDB_URL=url ```
 ![image](https://user-images.githubusercontent.com/36703491/158017327-1fdb563a-f31c-4d7a-8582-527c6e2e0a96.png)
+
 
 ![img.png](img.png)
 
