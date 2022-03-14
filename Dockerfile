@@ -1,4 +1,4 @@
-FROM maven:3.8.1-adoptopenjdk-11
+FROM maven:3.8.1-adoptopenjdk-11 AS GR_BUILD
 #WORKDIR /app
 COPY ./ ./
 RUN mvn clean package -DskipTests
