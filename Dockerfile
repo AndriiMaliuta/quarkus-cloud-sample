@@ -1,9 +1,9 @@
-FROM gradle:7.3.3-jdk11-alpine AS GR_BUILD
-WORKDIR /app
+FROM maven:3.8.1-adoptopenjdk-11
+#WORKDIR /app
 COPY ./ ./
-RUN gradle quarkusBuild
+RUN mvn clean package -DskipTests
 #RUN ./gradlew build -Dquarkus.package.type=uber-jar
 
 FROM adoptopenjdk:11
-COPY --from=GR_BUILD /app/build ./build
+COPY --from=GR_BUILD /build ./build
 CMD ["java -jar build/quarkus-app/quarkus-run.jar"]
