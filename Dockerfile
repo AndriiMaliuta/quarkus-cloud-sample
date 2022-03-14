@@ -5,5 +5,5 @@ RUN mvn clean package -DskipTests
 #RUN ./gradlew build -Dquarkus.package.type=uber-jar
 
 FROM adoptopenjdk:11
-COPY --from=GR_BUILD /build ./build
-CMD ["java -jar build/quarkus-app/quarkus-run.jar"]
+COPY --from=GR_BUILD /target ./target
+CMD ["java -jar arget/quarkus-app/quarkus-run.jar"]
